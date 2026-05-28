@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,21 +8,31 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-playfair",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Site Premium",
-  description: "A premium SaaS experience.",
+  title: "Ilha da Kosta II — Frutos do Mar e Sushi à Beira-Mar | Recife",
+  description:
+    "Uma experiência inesquecível de frutos do mar e gastronomia à beira-mar em Recife. Atmosfera sofisticada, hospitalidade calorosa, momentos memoráveis.",
+  metadataBase: new URL("https://ilhadakosta.com.br"),
+  openGraph: {
+    title: "Ilha da Kosta II — Beachfront Fine Dining",
+    description:
+      "Frutos do mar premium, sushi e coquetelaria autoral à beira-mar de Recife.",
+    type: "website",
+    locale: "pt_BR",
+  },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0b0b0f",
+  themeColor: "#08080b",
 };
 
 export default function RootLayout({
@@ -31,8 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="pt-BR" className={`${inter.variable} ${cormorant.variable}`}>
+      <body className="font-sans antialiased bg-[var(--bg)] text-[var(--fg)]">
+        {children}
+      </body>
     </html>
   );
 }

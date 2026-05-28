@@ -3,30 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b0b0f;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0b0b0f;
-    --foreground: #f7f7f8;
-  }
+  --bg: #08080b;
+  --bg-elev: #0f0f13;
+  --fg: #f4efe6;
+  --fg-muted: #a59f93;
+  --accent: #d4be7a;
+  --accent-warm: #c79b5f;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--fg);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(212, 190, 122, 0.35);
+  color: #fff;
 }
 
 @layer utilities {
   .container-px {
-    @apply px-2 sm:px-3 lg:px-6;
+    @apply px-3 sm:px-4 lg:px-8;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-[1360px] container-px;
+  }
+  .hairline {
+    background-image: linear-gradient(to right, transparent, rgba(244, 239, 230, 0.18), transparent);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .ambient-warm {
+    background:
+      radial-gradient(60% 50% at 20% 20%, rgba(199, 155, 95, 0.18) 0%, transparent 60%),
+      radial-gradient(50% 40% at 80% 30%, rgba(212, 190, 122, 0.10) 0%, transparent 65%),
+      radial-gradient(80% 60% at 50% 100%, rgba(11, 11, 15, 0.95) 0%, rgba(8, 8, 11, 1) 70%);
   }
 }
