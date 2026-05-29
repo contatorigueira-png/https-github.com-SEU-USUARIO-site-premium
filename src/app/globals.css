@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg: #08080b;
-  --bg-elev: #0f0f13;
-  --fg: #f4efe6;
-  --fg-muted: #a59f93;
-  --accent: #d4be7a;
-  --accent-warm: #c79b5f;
+  /* Warm, artisanal, light palette */
+  --bg: #FBF7F0;          /* warm paper cream */
+  --bg-elev: #F4EBDC;     /* raised cream surface */
+  --bg-deep: #EDE2CF;     /* deeper toasted cream */
+  --fg: #2A2117;          /* espresso ink */
+  --fg-muted: #7C7160;    /* muted taupe */
+  --accent: #A9783F;      /* toasted caramel */
+  --accent-soft: #C2965B; /* light caramel */
+  --clay: #A8603A;        /* terracotta — sparingly */
+  --line: rgba(42, 33, 23, 0.12);
+  --line-soft: rgba(42, 33, 23, 0.07);
 }
 
 html {
@@ -26,8 +31,8 @@ body {
 }
 
 ::selection {
-  background: rgba(212, 190, 122, 0.35);
-  color: #fff;
+  background: rgba(169, 120, 63, 0.22);
+  color: var(--fg);
 }
 
 @layer utilities {
@@ -38,7 +43,7 @@ body {
     @apply mx-auto w-full max-w-[1360px] container-px;
   }
   .hairline {
-    background-image: linear-gradient(to right, transparent, rgba(244, 239, 230, 0.18), transparent);
+    background-image: linear-gradient(to right, transparent, var(--line), transparent);
   }
   .text-balance {
     text-wrap: balance;
@@ -46,19 +51,28 @@ body {
   .text-pretty {
     text-wrap: pretty;
   }
+  /* Organic grain texture — sits over warm surfaces */
   .grain::before {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
   }
+  /* Soft paper fibre on the page base */
+  .paper {
+    background-image:
+      radial-gradient(60% 60% at 15% 10%, rgba(194, 150, 91, 0.07) 0%, transparent 55%),
+      radial-gradient(50% 50% at 90% 0%, rgba(168, 96, 58, 0.05) 0%, transparent 55%);
+  }
+  /* Warm cinematic lighting for the hero */
   .ambient-warm {
     background:
-      radial-gradient(60% 50% at 20% 20%, rgba(199, 155, 95, 0.18) 0%, transparent 60%),
-      radial-gradient(50% 40% at 80% 30%, rgba(212, 190, 122, 0.10) 0%, transparent 65%),
-      radial-gradient(80% 60% at 50% 100%, rgba(11, 11, 15, 0.95) 0%, rgba(8, 8, 11, 1) 70%);
+      radial-gradient(70% 55% at 22% 18%, rgba(232, 205, 158, 0.55) 0%, transparent 60%),
+      radial-gradient(55% 45% at 82% 28%, rgba(194, 150, 91, 0.35) 0%, transparent 65%),
+      radial-gradient(90% 70% at 50% 108%, rgba(168, 96, 58, 0.18) 0%, transparent 70%),
+      linear-gradient(180deg, #F8EFDF 0%, #F4E7D1 45%, #EFDDC2 100%);
   }
 }
