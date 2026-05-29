@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - claude/zen-fermat-OnG0n
+      - claude/confident-meitner-s3DOj
   workflow_dispatch:
 
 # Allow the workflow to publish to Pages
