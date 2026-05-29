@@ -5,23 +5,23 @@ import { Reveal, Stagger, StaggerItem } from "./Reveal";
 const pillars = [
   {
     eyebrow: "01",
-    title: "Frutos do mar premium",
-    body: "Selecionados diariamente nas costas pernambucanas — frescor que se sente em cada toque, em cada aroma.",
+    title: "Padaria artesanal",
+    body: "Massas de fermentação natural, longas curas e forno a lenha. Cada pão leva tempo — e o tempo se sente na crosta.",
   },
   {
     eyebrow: "02",
-    title: "Atmosfera sofisticada",
-    body: "Iluminação morna, brisa do Atlântico e um silêncio elegante que convida à conversa demorada.",
+    title: "Ingredientes gourmet",
+    body: "Farinhas selecionadas, manteiga francesa, frutas da estação e produtores locais que conhecemos pelo nome.",
   },
   {
     eyebrow: "03",
-    title: "Hospitalidade calorosa",
-    body: "Um serviço atencioso, discreto e profundamente humano — como uma casa que sempre esperou por você.",
+    title: "Frescor diário",
+    body: "Produção que começa às 4h. Tudo o que chega ao balcão foi feito naquela manhã, nunca antes.",
   },
   {
     eyebrow: "04",
-    title: "Momentos memoráveis",
-    body: "Aniversários, encontros, celebrações sem motivo. Aqui o tempo desacelera e a memória se forma.",
+    title: "Cultura de delicatessen",
+    body: "Queijos curados, charcutaria fina e cafés de especialidade — uma despensa refinada para o seu dia a dia.",
   },
 ];
 
@@ -34,9 +34,9 @@ export function About() {
             <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]">
               A casa
             </p>
-            <h2 className="mt-2 font-display font-light text-h1 md:text-display-md text-balance leading-[1.05]">
-              Uma ilha à beira-mar,
-              <span className="italic text-[var(--accent)]/90"> construída em torno do tempo.</span>
+            <h2 className="mt-2 font-display font-light text-h1 md:text-display-md text-balance leading-[1.05] text-[var(--fg)]">
+              Uma padaria construída
+              <span className="italic text-[var(--accent)]"> em torno do ofício.</span>
             </h2>
           </Reveal>
         </div>
@@ -44,22 +44,22 @@ export function About() {
         <div className="lg:col-span-7 lg:pt-3">
           <Reveal delay={0.1}>
             <p className="text-body-lg text-[var(--fg-muted)] text-pretty max-w-xl">
-              No Ilha da Kosta II, o oceano não é apenas paisagem — é matéria-prima,
-              ritmo e companhia. Cada prato nasce do diálogo entre a tradição
-              pernambucana e a precisão da alta gastronomia. Cada noite é
-              cuidadosamente coreografada para sentir, e não apenas servir.
+              A Porto Primo nasceu de uma ideia simples: que o pão de cada dia
+              pode ser extraordinário. Unimos a paciência da panificação artesanal
+              à precisão da alta confeitaria e à hospitalidade calorosa de um café
+              de bairro — para transformar o cotidiano em algo digno de se demorar.
             </p>
           </Reveal>
 
           <Stagger className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
             {pillars.map((p) => (
               <StaggerItem key={p.eyebrow}>
-                <article className="group relative h-full rounded-md border border-white/[0.07] bg-white/[0.015] p-3 lg:p-4 transition-all duration-500 ease-luxe hover:border-[var(--accent)]/30 hover:bg-white/[0.03]">
+                <article className="group relative h-full rounded-md border border-[var(--line-soft)] bg-cream-50/60 p-3 lg:p-4 transition-all duration-500 ease-luxe hover:border-[var(--accent)]/40 hover:bg-cream-100 hover:shadow-soft">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-caption uppercase tracking-[0.32em] text-[var(--accent)]/80">
+                    <span className="text-caption uppercase tracking-[0.32em] text-[var(--accent)]">
                       {p.eyebrow}
                     </span>
-                    <span className="h-px flex-1 bg-white/10 group-hover:bg-[var(--accent)]/30 transition-colors duration-500" />
+                    <span className="h-px flex-1 bg-[var(--line)] group-hover:bg-[var(--accent)]/40 transition-colors duration-500" />
                   </div>
                   <h3 className="mt-2 font-display text-h3 text-[var(--fg)]">{p.title}</h3>
                   <p className="mt-1 text-body-sm text-[var(--fg-muted)]">{p.body}</p>

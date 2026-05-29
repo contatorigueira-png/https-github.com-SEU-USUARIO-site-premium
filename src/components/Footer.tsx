@@ -4,21 +4,26 @@ import { site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06]">
+    <footer className="relative border-t border-[var(--line)] bg-cream-100/60">
       <div className="container-x py-8 lg:py-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-5">
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-display text-h2 text-[var(--fg)]">Ilha da Kosta</span>
-              <span className="font-display text-h2 text-[var(--accent)]">II</span>
+            <div className="flex flex-col leading-none">
+              <span className="font-display text-h2 text-[var(--fg)]">
+                Porto <span className="italic text-[var(--accent)]">Primo</span>
+              </span>
+              <span className="mt-0.5 text-caption uppercase tracking-[0.32em] text-[var(--fg-muted)]">
+                Delicatessen
+              </span>
             </div>
             <p className="mt-2 max-w-sm text-body-sm text-[var(--fg-muted)] text-pretty">
-              Frutos do mar premium, sushi e coquetelaria autoral à beira-mar de Recife.
+              Padaria artesanal, café de especialidade e delicatessen gourmet —
+              feitos todos os dias no coração de Recife.
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]/80">
+            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]">
               Horários
             </p>
             <ul className="mt-2 space-y-0.5 text-body-sm text-[var(--fg-muted)]">
@@ -31,7 +36,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]/80">
+            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]">
               Contato
             </p>
             <ul className="mt-2 space-y-0.5 text-body-sm">
@@ -48,7 +53,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]/80">
+            <p className="text-caption uppercase tracking-[0.28em] text-[var(--accent)]">
               Social
             </p>
             <ul className="mt-2 space-y-0.5 text-body-sm">

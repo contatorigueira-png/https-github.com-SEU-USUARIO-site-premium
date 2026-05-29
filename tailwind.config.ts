@@ -34,19 +34,33 @@ const config: Config = {
         "32": "256px",
       },
       colors: {
-        ink: {
-          50: "#f7f7f8",
-          100: "#eeeef0",
-          200: "#d9d9de",
-          400: "#7c7c85",
-          600: "#3a3a42",
-          800: "#1a1a1f",
-          900: "#0b0b0f",
+        // Warm paper / cream surfaces
+        cream: {
+          50: "#FBF7F0",
+          100: "#F6EFE3",
+          200: "#EDE2D0",
+          300: "#E0CFB4",
+          400: "#CFB893",
         },
-        gold: {
-          300: "#e8d8a8",
-          400: "#d4be7a",
-          500: "#b8a05a",
+        // Espresso ink for text
+        espresso: {
+          900: "#1E1710",
+          800: "#2A2117",
+          700: "#3C3225",
+          600: "#544838",
+          400: "#8A7C68",
+        },
+        // Toasted caramel — the single restrained accent
+        caramel: {
+          300: "#D8B788",
+          400: "#C2965B",
+          500: "#A9783F",
+          600: "#8C6231",
+        },
+        // Terracotta — used sparingly for warmth
+        clay: {
+          400: "#C07A4F",
+          500: "#A8603A",
         },
       },
       fontFamily: {
@@ -75,9 +89,9 @@ const config: Config = {
         "2xl": "32px",
       },
       boxShadow: {
-        "soft": "0 1px 2px rgba(11,11,15,0.04), 0 4px 16px rgba(11,11,15,0.04)",
-        "elevated": "0 8px 32px rgba(11,11,15,0.08), 0 2px 8px rgba(11,11,15,0.04)",
-        "luxe": "0 24px 80px -16px rgba(11,11,15,0.18)",
+        "soft": "0 1px 2px rgba(42,33,23,0.04), 0 4px 16px rgba(42,33,23,0.06)",
+        "elevated": "0 8px 32px rgba(42,33,23,0.10), 0 2px 8px rgba(42,33,23,0.05)",
+        "luxe": "0 24px 80px -16px rgba(42,33,23,0.22)",
       },
       transitionTimingFunction: {
         "luxe": "cubic-bezier(0.16, 1, 0.3, 1)",

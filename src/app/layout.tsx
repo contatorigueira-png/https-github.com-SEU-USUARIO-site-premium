@@ -16,14 +16,14 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ilha da Kosta II — Frutos do Mar e Sushi à Beira-Mar | Recife",
+  title: "Porto Primo Delicatessen — Padaria Artesanal, Café & Gourmet | Recife",
   description:
-    "Uma experiência inesquecível de frutos do mar e gastronomia à beira-mar em Recife. Atmosfera sofisticada, hospitalidade calorosa, momentos memoráveis.",
-  metadataBase: new URL("https://ilhadakosta.com.br"),
+    "Padaria artesanal, café de especialidade e delicatessen gourmet em Recife. Pães de fermentação natural, confeitaria fina e brunch — feitos todos os dias com hospitalidade calorosa.",
+  metadataBase: new URL("https://portoprimo.com.br"),
   openGraph: {
-    title: "Ilha da Kosta II — Beachfront Fine Dining",
+    title: "Porto Primo Delicatessen — Artisanal Bakery & Café",
     description:
-      "Frutos do mar premium, sushi e coquetelaria autoral à beira-mar de Recife.",
+      "Pães artesanais, café de especialidade e delicatessen gourmet no coração de Recife.",
     type: "website",
     locale: "pt_BR",
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#08080b",
+  themeColor: "#FBF7F0",
 };
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="font-sans antialiased bg-[var(--bg)] text-[var(--fg)]">
+      <body className="font-sans antialiased bg-[var(--bg)] text-[var(--fg)] paper">
         {children}
       </body>
     </html>

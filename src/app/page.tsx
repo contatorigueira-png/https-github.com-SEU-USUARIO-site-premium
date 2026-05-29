@@ -1,12 +1,13 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
-import { SignatureDishes } from "@/components/SignatureDishes";
+import { Products } from "@/components/Products";
 import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
-import { Reservation } from "@/components/Reservation";
+import { Contact } from "@/components/Contact";
 import { Location } from "@/components/Location";
 import { Footer } from "@/components/Footer";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 export default function Page() {
   return (
@@ -15,13 +16,14 @@ export default function Page() {
       <main className="relative">
         <Hero />
         <About />
-        <SignatureDishes />
+        <Products />
         <Gallery />
         <Testimonials />
-        <Reservation />
+        <Contact />
         <Location />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }
