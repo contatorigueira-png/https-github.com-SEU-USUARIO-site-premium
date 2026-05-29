@@ -62,3 +62,19 @@ body {
       radial-gradient(80% 60% at 50% 100%, rgba(11, 11, 15, 0.95) 0%, rgba(8, 8, 11, 1) 70%);
   }
 }
+
+/* Impressão / exportação em PDF — preserva o visual premium escuro */
+@media print {
+  html,
+  body {
+    background: #08080b !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
